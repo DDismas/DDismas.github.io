@@ -1,0 +1,238 @@
+:root {
+    /* Color variables */
+    --background-color: #000;
+    --sidebar-background-color: #222;
+    --text-color: white;
+    --sidebar-border-color: white;
+    --max-button-delay: 2.9s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:var(--background-color); /* Set the background color to black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the body take up the full height of the viewport */
+    overflow: hidden; /* Hide any overflow to prevent scrolling initially */
+}
+
+.logo-container {
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-in-out forwards, fadeOutUp 0.5s 1.5s ease-in-out forwards;
+    transform: translateY(0); /* Initial position, not translated */
+}
+
+.text-container {
+    opacity: 0; /* Initially invisible */
+    text-align: center;
+    color: var(--text-color); /* Choose a color that suits your design */
+    position: absolute; /* Position it independently of the logo */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    animation: fadeInText 0.5s ease-in-out forwards; /* Animation to fade in and scale up */
+    animation-delay: 2s; /* Delay to start after logo animation */
+}
+
+.button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex; /* Makes the container a flex container */
+    flex-direction: row; /* Aligns children (buttons) in a row */
+    gap: 20px; /* Adds space between buttons */
+}
+
+.slide-button {
+    opacity: 0; /* Initially hides the button */
+    transform: translateY(-20px); /* Positions the button 20px above its final position */
+    animation: slideDown 0.5s ease-out forwards; /* Applies slideDown animation */
+    width: 30px; /* Sets button width, adjust as needed */
+    height: 30px; /* Sets button height, adjust as needed */
+    overflow: hidden; /* Hides any overflow (larger images) */
+    border-radius: 50%; /* Makes the buttons circular */
+    display: flex; /* Makes the button a flex container */
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+}
+
+.slide-button img {
+    width: 100%; /* Scale image to button size */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below image */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.slide-button:hover img {
+    transform: scale(1.1); /* Slightly enlarge image on hover for effect */
+}
+.slide-button:nth-child(1) {
+    animation-delay: 2.5s; /* Start after logo animation */
+}
+
+.slide-button:nth-child(2) {
+    animation-delay: 2.7s;
+}
+
+.slide-button:nth-child(3) {
+    animation-delay: 2.9s;
+}
+
+.slide-button:nth-child(4) {
+    animation-delay: 3.1s;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    right: -250px; /* Initially positioned off-screen */
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: var(--sidebar-background-color); /* Lighter shade of black */
+    color: var(--sidebar-background-color);
+    padding: 20px;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.5);
+    border-left: 1px solid white; /* Thin white outline on the left edge */
+    transition: right 0.5s;
+    animation: slideInSidebar 0.5s ease-out forwards; /* Apply the animation to the sidebar */
+}
+
+.text-container-move-up {
+    top: 10%; /* Adjust the percentage/value as needed */
+    transition: top 0.6s ease; /* Smooth transition for the top property */
+}
+
+/* Additional styling for the content inside sidebar */
+#sidebar-content {
+    
+    font-size: 16px; /* Sets the font size, adjust as needed */
+    line-height: 1.5; /* Improves readability by setting line height */
+    color: var(--sidebar-border-color); /* Light grey color for text, ensuring contrast against the dark background */
+    margin-bottom: 20px; /* Adds some space at the bottom of the content */
+    text-align: left; /* Aligns text to the left */
+    word-wrap: break-word; /* Ensures long words or URLs wrap and don't overflow the sidebar */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Logo fadein */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move the logo to the center of the screen */
+    }
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0); /* Logo fadeout */
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px); /* Move the logo upward when fading out */
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes slideInSidebar {
+    0%, 100% {
+        border-left: 1px solid transparent; /* Start and end with a transparent border */
+    }
+    10%, 90% {
+        border-left: 1px solid white; /* Have the white border show only during the middle of the animation */
+    }
+}
+
+img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container width */
+    height: auto; /* Maintain the image's aspect ratio */
+    border-radius: 50%; /* Circle */
+    transition: transform 0.5s ease-in-out; /* Add a smooth transition for the transform property */
+}
+
+/* Apply a class to the logo container to trigger the upward movement */
+.logo-up {
+    transform: translateY(-100vh); /* Move the logo upward by the full height of the viewport */
+}
+
+@keyframes fadeInThumbnails {
+    from {
+        opacity: 0;
+        transform: translateY(50px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+} 
+
+.video-grid-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+    grid-gap: 30px; /* Space between grid items */
+    justify-content: center; /* Center grid in the container */
+    align-items: center; /* Align items vertically */
+    padding: 20px; /* Padding around the grid */
+    visibility: hidden; /* Initially hide the grid */
+}
+
+.video-grid-container iframe {
+    animation: fadeInThumbnails 0.5s ease-in-out;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    border: none;
+
+}
+
+/* This is for the colored text in the sidebar */
+.contact-twitter {
+    color:#1DA1F2
+}
+
+.contact-discord {
+    color:#7289DA
+}
+
+.contact-email {
+    color:#D44638
+}
