@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         description = 'You can easily contact me!<br><br>On ' +
                                       '<span class="contact-twitter">Twitter: @DDismas1</span>' + ' (DMs are always open!)<br><br>' +
                                       '<span class="contact-discord">Discord:</span> ddismas1 / Dismas#8659<br><br>' +
-                                      'Or via email by either clicking this or emailing<br>' +
+                                      'Or via email by either clicking this button or emailing<br>' +
                                       '<span class="contact-email">spaccalberi@gmail.com</span>';
                         break;
                     default:
