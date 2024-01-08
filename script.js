@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         description = 'This is the Reddit account where I mostly post memes and whatnot.';
                         break;
                     case 'YouTube':
-                        description = 'This is a test channel:<br>I have uploaded 3 to 5 videos daily every single day for a month in here as a challenge about the Terraria Calamity mod to check out how shorts were favored from the Youtube algorithm.<br><br>It worked surprisingly well, with almost 3k subs by the end of the first month without any kind of external push!';
+                        description = 'This is a test channel:<br>I have uploaded 3 to 5 videos daily every single day for a month in here (as an endurance challenge) about the Terraria Calamity mod to check out how shorts were favored from the Youtube algorithm.<br><br>It worked surprisingly well, with almost 3k subs by the end of the first month without any kind of external push!<br>You could also see how the quality of my videos dramatically improved over this month. Pretty proud of this!';
                         break;
                     case 'Contacts':
                         description = 'You can easily contact me!<br><br>On ' +
