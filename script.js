@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                       '<span class="contact-twitter">Twitter: @DDismas1</span>' + ' (DMs are always open!)<br><br>' +
                                       '<span class="contact-discord">Discord:</span> ddismas1 / Dismas#8659<br><br>' +
                                       'Or via email by either clicking this button or emailing<br>' +
-                                      '<span class="contact-email">spaccalberi@gmail.com</span>';
+                                      '<span class="contact-email">contact@ddismas.com</span>';
                         break;
                     default:
                         description = 'Hover over a button for details. You should not be able to read this!';
