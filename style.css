@@ -33,8 +33,8 @@ body {
 .text-container {
     opacity: 0; /* Initially invisible */
     text-align: center;
-    color: var(--text-color); /* Choose a color that suits your design */
-    position: absolute; /* Position it independently of the logo */
+    color: var(--text-color); /* Choose a color */
+    position: absolute;
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     animation: fadeInText 0.5s ease-in-out forwards; /* Animation to fade in and scale up */
@@ -46,33 +46,33 @@ body {
     top: 0;
     left: 0;
     padding: 20px;
-    display: flex; /* Makes the container a flex container */
-    flex-direction: row; /* Aligns children (buttons) in a row */
-    gap: 20px; /* Adds space between buttons */
+    display: flex; 
+    flex-direction: row; 
+    gap: 20px; 
 }
 
 .slide-button {
-    opacity: 0; /* Initially hides the button */
-    transform: translateY(-20px); /* Positions the button 20px above its final position */
-    animation: slideDown 0.5s ease-out forwards; /* Applies slideDown animation */
-    width: 30px; /* Sets button width, adjust as needed */
-    height: 30px; /* Sets button height, adjust as needed */
-    overflow: hidden; /* Hides any overflow (larger images) */
-    border-radius: 50%; /* Makes the buttons circular */
-    display: flex; /* Makes the button a flex container */
-    justify-content: center; /* Centers the image horizontally */
-    align-items: center; /* Centers the image vertically */
+    opacity: 0; 
+    transform: translateY(-20px); 
+    animation: slideDown 0.5s ease-out forwards; 
+    width: 30px; 
+    height: 30px; 
+    overflow: hidden; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .slide-button img {
-    width: 100%; /* Scale image to button size */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any extra space below image */
+    width: 100%; 
+    height: auto; 
+    display: block; 
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .slide-button:hover img {
-    transform: scale(1.1); /* Slightly enlarge image on hover for effect */
+    transform: scale(1.1);
 }
 .slide-button:nth-child(1) {
     animation-delay: 2.5s; /* Start after logo animation */
@@ -114,12 +114,12 @@ body {
 /* Additional styling for the content inside sidebar */
 #sidebar-content {
     
-    font-size: 16px; /* Sets the font size, adjust as needed */
-    line-height: 1.5; /* Improves readability by setting line height */
-    color: var(--sidebar-border-color); /* Light grey color for text, ensuring contrast against the dark background */
-    margin-bottom: 20px; /* Adds some space at the bottom of the content */
-    text-align: left; /* Aligns text to the left */
-    word-wrap: break-word; /* Ensures long words or URLs wrap and don't overflow the sidebar */
+    font-size: 16px; 
+    line-height: 1.5; 
+    color: var(--sidebar-border-color); 
+    margin-bottom: 20px; 
+    text-align: left; 
+    word-wrap: break-word;
 }
 
 @keyframes slideDown {
@@ -170,16 +170,16 @@ body {
 
 @keyframes slideInSidebar {
     0%, 100% {
-        border-left: 1px solid transparent; /* Start and end with a transparent border */
+        border-left: 1px solid transparent; 
     }
     10%, 90% {
-        border-left: 1px solid white; /* Have the white border show only during the middle of the animation */
+        border-left: 1px solid white; 
     }
 }
 
 img {
-    max-width: 100%; /* Ensure the image doesn't exceed its container width */
-    height: auto; /* Maintain the image's aspect ratio */
+    max-width: 100%; 
+    height: auto; 
     border-radius: 50%; /* Circle */
     transition: transform 0.5s ease-in-out; /* Add a smooth transition for the transform property */
 }
@@ -209,10 +209,10 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
     grid-gap: 30px; /* Space between grid items */
-    justify-content: center; /* Center grid in the container */
-    align-items: center; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
     padding: 20px; /* Padding around the grid */
-    visibility: hidden; /* Initially hide the grid */
+    visibility: hidden; 
 }
 
 .video-grid-container iframe {
@@ -235,4 +235,5 @@ img {
 
 .contact-email {
     color:#D44638
+
 }
