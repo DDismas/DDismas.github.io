@@ -33,7 +33,7 @@ body {
 .text-container {
     opacity: 0; /* Initially invisible */
     text-align: center;
-    color: var(--text-color); /* Choose a color */
+    color: var(--text-color);
     position: absolute;
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
